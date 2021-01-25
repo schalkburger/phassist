@@ -1,6 +1,6 @@
 # Phassist
 
-Phassist is a Phasmaphobia AHK script to assist with some annoying shortcomin
+Phassist is a Phasmaphobia AHK script to assist with fixing some usability issues.
 
 ## Installation
 
