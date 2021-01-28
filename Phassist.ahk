@@ -14,10 +14,10 @@ Gui, Show, x0 y0, Phassist
 return
 
 
-; Binds 4th mouse button to toggle walk or sprint
+; Binds 5th mouse button to toggle walk or sprint
 #If WinActive("ahk_exe Phasmophobia.exe")
-+XButton1::
-XButton1::
++XButton2::
+XButton2::
 SprintToggle := !SprintToggle
 if (SprintToggle)
 {
@@ -35,19 +35,21 @@ return
 #If
 
 ; Rebind local push to talk
-; Binds 5th mouse button button to V
+; Binds CapsLock button button to V
 #If WinActive("ahk_exe Phasmophobia.exe")
-+XButton2::
-XButton2::
++CapsLock::
+CapsLock::
 LocalTalkToggle := !LocalTalkToggle
 if (LocalTalkToggle)
 {
+	SoundBeep, 420, 200
 	Send "{v}"
 	GuiControl,, StatusText, Talking
 	Gui, Color, %SprintColor%
 }
 else
 {
+	SoundBeep, 120, 200
 	Send "{v}"
 	GuiControl,, StatusText, Quiet
 	Gui, Color, %WalkColor%
@@ -64,12 +66,10 @@ FlashlightToggle := !FlashlightToggle
 if (FlashlightToggle)
 {
 	Send "{t}"
-	Gui, Color, %SprintColor%
 }
 else
 {
 	Send "{t}"
-	Gui, Color, %WalkColor%
 }
 return
 #If
