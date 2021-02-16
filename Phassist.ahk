@@ -1,27 +1,55 @@
 
 #MaxThreadsPerHotkey 3
-BackgroundColor := "aaaaaa"
-SprintColor := "66aa55"
-WalkColor := "ff0000"
+BackgroundColor := "161616"
+SprintColor := "3b8828"
+WalkColor := "161616"
 ClickerColor := "fd00ff"
-AddAllColor := "66aa55"
-option1 = "What do you want?"
-option2 = "Why are you here?"
-option3 = "Do you want to hurt us?"
-Gui +LastFound +AlwaysOnTop +Caption +ToolWindow +Resize
+AddAllColor := "3b8828"
+; Difficulty Questions
+QDifficulty1 = "What do you want?"
+QDifficulty2 = "Why are you here?"
+QDifficulty3 = "Do you want to hurt us?"
+QDifficulty4 = "Are you friendly?"
+; Location Questions
+QLocation1 = "Where are you?"
+QLocation2 = "Give us a sign."
+QLocation3 = "Are you here?"
+QLocation4 = "Show yourself."
+; Age questions
+QAge1 = "How old are you?"
+QAge2 = "Are you young?"
+QAge3 = "Are you old?"
+QAge4 = "What is your age?"
+Gui +LastFound +AlwaysOnTop +ToolWindow -Caption
 Gui, Margin, 10, 10
 Gui, Color, %BackgroundColor%
 Gui, Font, s10
-Gui, Add, Text, +Wrap w250 vStatusText cWhite, Phassist
-Gui, Show, x0 y0 w200, Phassist
+Gui, Add, Text, +Wrap w180 vStatusText cWhite, Phassist
+Gui, Show, x0 y0 w180, Phassist
 return
 
 ; Binds F1 to random Spirit Box phrases
 ; #If WinActive("ahk_exe Phasmophobia.exe")
 F1::
-Random, rn, 1, 3
-; msgbox % option%rn%
-GuiControl,, StatusText, % option%rn%
+Random, rn, 1, 4
+; msgbox % QDifficulty%rn%
+GuiControl,, StatusText, % QDifficulty%rn%
+return
+; #If
+
+; Binds F1 to random Spirit Box phrases
+; #If WinActive("ahk_exe Phasmophobia.exe")
+F2::
+Random, rn, 1, 4
+GuiControl,, StatusText, % QLocation%rn%
+return
+; #If
+
+; Binds F1 to random Spirit Box phrases
+; #If WinActive("ahk_exe Phasmophobia.exe")
+F3::
+Random, rn, 1, 4
+GuiControl,, StatusText, % QAge%rn%
 return
 ; #If
 
@@ -168,8 +196,8 @@ F10::
 		Click 1440, 442	; Infrared Light Sensor
 		Sleep, 100
 	}
-	Loop, 0 {					; Parabolic Microphone
-		Click 1440, 471	; Parabolic Microphone
+	Loop, 1 {					; Parabolic Microphone
+		Click 1440, 465	; Parabolic Microphone
 		Sleep, 100
 	}
 	Loop, 2 {					; Glowstick
