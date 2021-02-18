@@ -121,91 +121,91 @@ F10::
 	GuiControl,, StatusText, Adding
 	Gui, Color, %AddAllColor%
 	Loop, 1 {					; EMF Reader
-		Click 910, 355, 2	; EMF Reader
+		Click 810, 355, 2	; EMF Reader
 		Sleep, 100
 	}
 	Loop, 1 {					; Flashlight
-		Click 910, 378, 2	; Flashlight
+		Click 810, 378, 2	; Flashlight
 		Sleep, 100
 	}
 	Loop, 2 {					; Photo Camera
-		Click 910, 413, 2	; Photo Camera
+		Click 810, 413, 2	; Photo Camera
 		Sleep, 100
 	}
 	Loop, 2 {					; Lighter
-		Click 910, 442, 2	; Lighter
+		Click 810, 442, 2	; Lighter
 		Sleep, 100
 	}
 	Loop, 4 {					; Candle
-		Click 910, 471, 2	; Candle
+		Click 810, 471, 2	; Candle
 		Sleep, 100
 	}
 	Loop, 1 {					; UV Light
-		Click 910, 500	; UV Light
+		Click 810, 500	; UV Light
 	}
 	Loop, 2 {					; Crucifix
-		Click 910, 529	; Crucifix
+		Click 810, 529	; Crucifix
 		Sleep, 100
 	}
 	Loop, 5 {					; Video Camera
-		Click 910, 558	; Video Camera
+		Click 810, 558	; Video Camera
 		Sleep, 100
 	}
 	Loop, 1 {					; Spirit Box
-		Click 910, 587	; Spirit Box
+		Click 810, 587	; Spirit Box
 		Sleep, 100
 	}
 	Loop, 2 {					; Salt
-		Click 910, 616	; Salt
+		Click 810, 616	; Salt
 		Sleep, 100
 	}
 	Loop, 4 {					; Smudge Sticks
-		Click 910, 645	; Smudge Sticks
+		Click 810, 645	; Smudge Sticks
 		Sleep, 100
 	}
 	Loop, 5 {					; Tripod
-		Click 910, 674	; Tripod
+		Click 810, 674	; Tripod
 		Sleep, 100
 	}
 	Loop, 4 {					; Strong Flashlight
-		Click 910, 703	; Strong Flashlight
+		Click 810, 703	; Strong Flashlight
 		Sleep, 100
 	}
 	Loop, 4 {					; Motion Sensor
-		Click 910, 732	; Motion Sensor
+		Click 810, 732	; Motion Sensor
 		Sleep, 100
 	}
 	Loop, 4 {					; Sound Sensor
-		Click 910, 765	; Sound Sensor
+		Click 810, 765	; Sound Sensor
 		Sleep, 100
 	}
 	
 	Loop, 3 {					; Thermometer
-		Click 1440, 355	; Themometer
+		Click 1340, 355	; Themometer
 		Sleep, 100
 	}
 	Loop, 4 {					; Sanity Pills
-		Click 1440, 384	; Sanity Pills
+		Click 1340, 384	; Sanity Pills
 		Sleep, 100
 	}
 	Loop, 1 {					; Ghost Writing Book
-		Click 1440, 413	; Ghost Writing Book
+		Click 1340, 413	; Ghost Writing Book
 		Sleep, 100
 	}
 	Loop, 4 {					; Infrared Light Sensor
-		Click 1440, 442	; Infrared Light Sensor
+		Click 1340, 442	; Infrared Light Sensor
 		Sleep, 100
 	}
 	Loop, 1 {					; Parabolic Microphone
-		Click 1440, 465	; Parabolic Microphone
+		Click 1340, 465	; Parabolic Microphone
 		Sleep, 100
 	}
 	Loop, 2 {					; Glowstick
-		Click 1440, 500	; Glowstick
+		Click 1340, 500	; Glowstick
 		Sleep, 100
 	}
 	Loop, 4 {					; Head Mounted Camera
-		Click 1440, 529	; Head Mounted Camera
+		Click 1340, 529	; Head Mounted Camera
 		Sleep, 100
 	}
 	GuiControl,, StatusText, Finished
