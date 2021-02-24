@@ -3,10 +3,9 @@
 GuiWidth := 200
 Guixpos := A_ScreenWidth - GuiWidth - 20
 BackgroundColor := "161616"
-SprintColor := "3b8828"
-WalkColor := "161616"
-ClickerColor := "fd00ff"
-AddAllColor := "3b8828"
+SprintColor := "4C75A3;"
+WalkColor := "3b8828"
+AddAllColor := "4C75A3;"
 ; Difficulty Questions
 QDifficulty1 = "What do you want?"
 QDifficulty2 = "Why are you here?"
@@ -22,6 +21,8 @@ QAge1 = "How old are you?"
 QAge2 = "Are you young?"
 QAge3 = "Are you old?"
 QAge4 = "What is your age?"
+GuiWidth := 200
+Guixpos := A_ScreenWidth - GuiWidth - 20
 Gui +LastFound +AlwaysOnTop +ToolWindow -Caption
 Gui, Margin, 10, 10
 Gui, Color, %BackgroundColor%
@@ -57,20 +58,20 @@ return
 
 ; Binds 5th mouse button to toggle walk or sprint
 #If WinActive("ahk_exe Phasmophobia.exe")
-+XButton2::
-XButton2::
++CapsLock::
+CapsLock::
 SprintToggle := !SprintToggle
 if (SprintToggle)
 {
 	Send "{Shift Down}{w Down}"
-	GuiControl,, StatusText, Running
+	GuiControl,, StatusText, Auto Running
 	Gui, Color, %SprintColor%
 }
 else
 {
 	Send "{Shift Up}{w Up}"
-	GuiControl,, StatusText, Idling
-	Gui, Color, %WalkColor%
+	GuiControl,, StatusText, Manual Running
+	Gui, Color, %BackgroundColor%
 }
 return
 #If
@@ -78,14 +79,14 @@ return
 ; Rebind local push to talk
 ; Binds CapsLock button button to V
 #If WinActive("ahk_exe Phasmophobia.exe")
-+CapsLock::
-CapsLock::
++v::
+v::
 LocalTalkToggle := !LocalTalkToggle
 if (LocalTalkToggle)
 {
 	SoundBeep, 420, 200
 	Send "{v}"
-	GuiControl,, StatusText, Talking
+	GuiControl,, StatusText, Local Push To Talk Active
 	Gui, Color, %SprintColor%
 }
 else
@@ -93,7 +94,7 @@ else
 	SoundBeep, 120, 200
 	Send "{v}"
 	GuiControl,, StatusText, Quiet
-	Gui, Color, %WalkColor%
+	Gui, Color, %BackgroundColor%
 }
 return
 #If
@@ -120,97 +121,100 @@ return
 #If WinActive("ahk_exe Phasmophobia.exe")
 +F10::
 F10::
-	GuiControl,, StatusText, Adding
-	Gui, Color, %AddAllColor%
+	GuiControl,, StatusText, Adding equipment
+	Gui, Color, %BackgroundColor%
 	Loop, 1 {					; EMF Reader
 		Click 810, 355, 2	; EMF Reader
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 1 {					; Flashlight
 		Click 810, 378, 2	; Flashlight
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 2 {					; Photo Camera
 		Click 810, 413, 2	; Photo Camera
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 2 {					; Lighter
 		Click 810, 442, 2	; Lighter
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 4 {					; Candle
 		Click 810, 471, 2	; Candle
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 1 {					; UV Light
 		Click 810, 500	; UV Light
 	}
 	Loop, 2 {					; Crucifix
 		Click 810, 529	; Crucifix
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 5 {					; Video Camera
 		Click 810, 558	; Video Camera
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 1 {					; Spirit Box
 		Click 810, 587	; Spirit Box
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 2 {					; Salt
 		Click 810, 616	; Salt
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 4 {					; Smudge Sticks
 		Click 810, 645	; Smudge Sticks
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 5 {					; Tripod
 		Click 810, 674	; Tripod
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 4 {					; Strong Flashlight
 		Click 810, 703	; Strong Flashlight
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 4 {					; Motion Sensor
 		Click 810, 732	; Motion Sensor
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 4 {					; Sound Sensor
 		Click 810, 765	; Sound Sensor
-		Sleep, 100
+		Sleep, -1
 	}
 	
 	Loop, 3 {					; Thermometer
 		Click 1340, 355	; Themometer
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 4 {					; Sanity Pills
 		Click 1340, 384	; Sanity Pills
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 1 {					; Ghost Writing Book
 		Click 1340, 413	; Ghost Writing Book
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 4 {					; Infrared Light Sensor
 		Click 1340, 442	; Infrared Light Sensor
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 1 {					; Parabolic Microphone
 		Click 1340, 465	; Parabolic Microphone
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 2 {					; Glowstick
 		Click 1340, 500	; Glowstick
-		Sleep, 100
+		Sleep, -1
 	}
 	Loop, 4 {					; Head Mounted Camera
 		Click 1340, 529	; Head Mounted Camera
-		Sleep, 100
+		Sleep, -1
 	}
 	GuiControl,, StatusText, Finished
+	Gui, Color, %WalkColor%
+	Sleep, 3000	
+	GuiControl,, StatusText, Phassist
 	Gui, Color, %BackgroundColor%
 return
 #If
