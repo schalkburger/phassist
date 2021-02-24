@@ -1,5 +1,7 @@
 
 #MaxThreadsPerHotkey 3
+GuiWidth := 200
+Guixpos := A_ScreenWidth - GuiWidth - 20
 BackgroundColor := "161616"
 SprintColor := "3b8828"
 WalkColor := "161616"
@@ -25,7 +27,7 @@ Gui, Margin, 10, 10
 Gui, Color, %BackgroundColor%
 Gui, Font, s10
 Gui, Add, Text, +Wrap w180 vStatusText cWhite, Phassist
-Gui, Show, x0 y0 w180, Phassist
+Gui, Show, y10 x%Guixpos% w180 w%GuiWidth%
 return
 
 ; Binds F1 to random Spirit Box phrases
